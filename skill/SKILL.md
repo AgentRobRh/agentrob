@@ -35,7 +35,7 @@ The mint lives on Robinhood Chain; the **Agent-ID lives on BNB Chain**. The gate
 read of the BNB registry for the operator's wallet. Always re-confirm these addresses against the
 live site config (`GET /config`) and the token's on-chain `pair()` / `treasury()` before trusting them.
 
-## Backend API (base `https://<site>`; signs the gate voucher, never holds keys)
+## Backend API (base `https://agentrob.live`; signs the gate voucher, never holds keys)
 
 - `GET  /api/status` → live mint snapshot: `sold`, `openAt`, `priceCents`, `opened`, `firstMintTime`, `refundWindow`, `ca`.
 - `GET  /config` → `chainId`, `rpc`, `mintAddr`, `tokenAddr`, `agentRegistry`, signer addresses.
@@ -45,7 +45,8 @@ live site config (`GET /config`) and the token's on-chain `pair()` / `treasury()
   calldata **with a signed EIP-712 gate voucher baked in**. The agent broadcasts this from the
   operator's wallet (`eth_sendTransaction`); `value` is the ETH cost in wei.
 - `POST /prepare/social` `{ wallet, tokenId, task, proof? }` → `{ sign_this }` for `grantQuota` (+1 free, once per task).
-- `POST /refund/status` `{ addr }` and `POST /prepare/refund` `{ wallet }` → refund read + `refund()` calldata.
+- `POST /refund/status` `{ wallet }` and `POST /prepare/refund` `{ wallet }` → refund read + `refund()` calldata.
+- `POST /invite/register` `{ wallet, tokenId, ref }` and `POST /prepare/invite` `{ wallet, tokenId }` → referral register + claim (+1 free per invited agent that first-mints).
 
 ## Mint flow (always preview, never auto-execute)
 
