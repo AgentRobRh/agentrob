@@ -25,15 +25,15 @@ explicit confirmation.
 
 | Role | Address |
 |---|---|
-| Mint (`RobMint`) | `PENDING_DEPLOY` |
-| Token (`$ROB`, `RobToken`) | `PENDING_DEPLOY` |
-| Pool pair (self-deployed Uniswap V2) | `PENDING_DEPLOY` |
-| Treasury | `PENDING_DEPLOY` |
+| Mint (`RobMint`) | `0x6a0837e93ee51fb77425573cb42269298fc8fd3a` |
+| Token (`$ROB`, `RobToken`) | `0x68b93afa31d59a0fddfac13576952ccc95f13df0` |
+| Pool pair (self-deployed Uniswap V2) | `0x4b78ed4d04f58cdc1f6f3a02ae66df64b449e9b9` |
+| Treasury | `0xd8d4ed318ad3a5709895ce9662c428ec2557dc0c` |
 | **.ai Agent-ID registry (on BNB Chain 56)** | `0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F` |
 
 The mint lives on Robinhood Chain; the **Agent-ID lives on BNB Chain**. The gate is an on-chain
-read of the BNB registry for the operator's wallet. Confirm `PENDING_DEPLOY` addresses against the
-live site config and the token's on-chain `pair()` / `treasury()` before trusting them.
+read of the BNB registry for the operator's wallet. Always re-confirm these addresses against the
+live site config (`GET /config`) and the token's on-chain `pair()` / `treasury()` before trusting them.
 
 ## Backend API (base `https://<site>`; signs the gate voucher, never holds keys)
 

@@ -41,10 +41,19 @@ non-custodial — it authorizes, it never holds funds or executes.
   distributed to $ROB holders as **ETH**, pro-rata, claimable anytime.
 - **Renounced.** Admin is renounced immediately after the pool is seeded.
 
-### Contract addresses
+### Contract addresses (Robinhood Chain, chainId 4663)
 
-All addresses are **TBA on deploy** (the contracts are not yet deployed). After deployment they are
-served live by the backend at `GET /config`.
+| Contract | Address |
+|---|---|
+| **$ROB token** (`RobToken`) | [`0x68b93afa31d59a0fddfac13576952ccc95f13df0`](https://robin.etherscan.io/address/0x68b93afa31d59a0fddfac13576952ccc95f13df0) |
+| **Mint** (`RobMint`) | [`0x6a0837e93ee51fb77425573cb42269298fc8fd3a`](https://robin.etherscan.io/address/0x6a0837e93ee51fb77425573cb42269298fc8fd3a) |
+| **DEX factory** (`RobFactory`, Uniswap V2 fork) | [`0xcdcea6b7ce2ecc00dd696e7c183adaca6a0dab53`](https://robin.etherscan.io/address/0xcdcea6b7ce2ecc00dd696e7c183adaca6a0dab53) |
+| **Pool pair** ($ROB/WETH, LP → dead) | [`0x4b78ed4d04f58cdc1f6f3a02ae66df64b449e9b9`](https://robin.etherscan.io/address/0x4b78ed4d04f58cdc1f6f3a02ae66df64b449e9b9) |
+| **Treasury** | [`0xd8d4ed318ad3a5709895ce9662c428ec2557dc0c`](https://robin.etherscan.io/address/0xd8d4ed318ad3a5709895ce9662c428ec2557dc0c) |
+| WETH (quote) | `0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73` |
+| Chainlink ETH/USD feed | `0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9` |
+
+The backend also serves these live at `GET /config`.
 
 ## Repository layout
 
