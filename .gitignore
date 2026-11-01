@@ -1,0 +1,10 @@
+out/
+cache/
+broadcast/
+lib/
+node_modules/
+.env
+*.key
+*.token
+.DS_Store
+secrets/
